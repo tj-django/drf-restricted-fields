@@ -12,9 +12,9 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [ ]
 
-setup_requirements = ['pytest-runner', ]
+setup_requirements = ['pytest-runner']
 
-test_requirements = ['pytest>=3', ]
+test_requirements = ['pytest>=3']
 
 setup(
     author="Tonye Jack",
@@ -36,7 +36,7 @@ setup(
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='drf_restricted_fields',
+    keywords=['drf_restricted_fields', 'restricted_fields'],
     name='drf_restricted_fields',
     packages=find_packages(include=['restricted_fields', 'restricted_fields.*']),
     setup_requires=setup_requirements,
