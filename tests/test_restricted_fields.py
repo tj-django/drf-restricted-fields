@@ -5,7 +5,7 @@
 import pytest
 
 
-from drf_restricted_fields import drf_restricted_fields
+from restricted_fields import *
 
 
 @pytest.fixture
