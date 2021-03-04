@@ -10,7 +10,7 @@ drf-restricted-fields
         :target: https://travis-ci.com/tj-django/drf_restricted_fields
 
 .. image:: https://readthedocs.org/projects/drf-restricted-fields/badge/?version=latest
-        :target: https://drf-restricted-fields.readthedocs.io/en/latest/?badge=latest
+        :target: https://drf-restricted-fields.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
 
 
