@@ -1,1 +1,1 @@
-"""Unit test package for drf_restricted_fields."""
+"""Unit test package for restricted_fields."""
