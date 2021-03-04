@@ -9,14 +9,14 @@ class RestrictedFieldsSerializerMixin(object):
     API Serializer mixin which provides support for restricting serialized data to only a subset of fields.
     This requires using the ``only`` and ``defer`` query parameters.
     ---
-    only: Restricted to only a subset of fields
-    defer: Defer the listed fields.
+    only: Restricted to only a subset of fields (Include these fields).
+    defer: Defer the listed fields (Exclude these fields).
     ---
     Examples:
         GET https://.../api/users/?only=id&only=name
         # This returns the serialized data with only the `id` and `name` fields.
         {
-            "count":198,
+            "count":1,
             "next": "http://127.0.0.1:8000/api/users/?only=id&only=name&page=1",
             "previous":null,
             "results":[
