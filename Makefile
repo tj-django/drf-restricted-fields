@@ -48,7 +48,7 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr .pytest_cache
 
 lint: ## check style with flake8
-	flake8 drf_restricted_fields tests
+	flake8 restricted_fields tests
 
 test: ## run tests quickly with the default Python
 	pytest
@@ -57,7 +57,7 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source drf_restricted_fields -m pytest
+	coverage run --source restricted_fields -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
