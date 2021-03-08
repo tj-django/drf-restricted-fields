@@ -14,8 +14,8 @@ drf-restricted-fields
         :alt: Documentation Status
 
 
-.. image:: https://pyup.io/repos/github/tj-django/drf_restricted_fields/shield.svg
-     :target: https://pyup.io/repos/github/tj-django/drf_restricted_fields/
+.. image:: https://pyup.io/repos/github/tj-django/drf-restricted-fields/shield.svg
+     :target: https://pyup.io/repos/github/tj-django/drf-restricted-fields/
      :alt: Updates
 
 
