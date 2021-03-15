@@ -2,17 +2,16 @@
 drf-restricted-fields
 =====================
 
-
 .. image:: https://img.shields.io/pypi/v/drf_restricted_fields.svg
         :target: https://pypi.python.org/pypi/drf_restricted_fields
 
-.. image:: https://img.shields.io/travis/tj-django/drf_restricted_fields.svg
-        :target: https://travis-ci.com/tj-django/drf_restricted_fields
+.. image:: https://github.com/tj-django/drf-restricted-fields/actions/workflows/test.yml/badge.svg
+        :target: https://github.com/tj-django/drf-restricted-fields/actions/workflows/test.yml
+
 
 .. image:: https://readthedocs.org/projects/drf-restricted-fields/badge/?version=latest
         :target: https://drf-restricted-fields.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
-
 
 .. image:: https://pyup.io/repos/github/tj-django/drf-restricted-fields/shield.svg
      :target: https://pyup.io/repos/github/tj-django/drf-restricted-fields/
