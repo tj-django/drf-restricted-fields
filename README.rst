@@ -76,11 +76,6 @@ Serialize only the `id` and `name` fields.
 * Documentation: https://drf-restricted-fields.readthedocs.io.
 
 
-Features
---------
-
-* TODO
-
 Credits
 -------
 
