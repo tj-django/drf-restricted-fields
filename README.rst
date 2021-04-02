@@ -18,8 +18,11 @@ drf-restricted-fields
      :alt: Updates
 
 
+Features
+========
 
-Restrict fields returned by DRF serializers
+Restrict fields returned by DRF serializers using `only` query parameter
+------------------------------------------------------------------------
 
 .. code-block:: sh
 
