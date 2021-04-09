@@ -18,8 +18,11 @@ drf-restricted-fields
      :alt: Updates
 
 
+Features
+========
 
-Restrict fields returned by DRF serializers
+Restrict fields returned by DRF serializers using the ``only`` query parameter
+------------------------------------------------------------------------------
 
 .. code-block:: sh
 
@@ -44,14 +47,34 @@ Serialize only the `id` and `name` fields.
     }
 
 
+Defer fields returned by DRF serializers using the ``defer`` query parameter
+----------------------------------------------------------------------------
+
+.. code-block:: sh
+
+    GET http://127.0.0.1:8000/api/users/?defer=name&defer=age
+
+
+Serialize only the `id` and `name` fields.
+
+.. code-block:: json
+
+    {
+        "count":198,
+        "next": "http://127.0.0.1:8000/api/users/?defer=name&defer=age&page=1",
+        "previous":null,
+        "results":[
+            {
+                "id":1,
+            },
+            ...
+        ],
+    }
+
+
 * Free software: MIT license
 * Documentation: https://drf-restricted-fields.readthedocs.io.
 
-
-Features
---------
-
-* TODO
 
 Credits
 -------
