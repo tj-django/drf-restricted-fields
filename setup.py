@@ -63,7 +63,7 @@ extras_require = {
 setup(
     author="Tonye Jack",
     author_email='jtonye@ymail.com',
-    python_requires='>=2.6',
+    python_requires='>=3.6',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
