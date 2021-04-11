@@ -39,8 +39,9 @@ class RestrictedFieldsSerializerMixin(object):
             ],
         }
     """
-    RESTRICTED_FIELDS_PARAM = 'only'
-    DEFERRED_FIELDS_PARAM = 'defer'
+
+    RESTRICTED_FIELDS_PARAM = "only"
+    DEFERRED_FIELDS_PARAM = "defer"
 
     def to_representation(self, instance):
         """
@@ -51,7 +52,7 @@ class RestrictedFieldsSerializerMixin(object):
         :return: Dictionary of fields and corresponding value.
         """
 
-        request = self.context['request']
+        request = self.context["request"]
         ret = OrderedDict()
         restricted_fields = request.query_params.getlist(self.RESTRICTED_FIELDS_PARAM)
         deferred_fields = request.query_params.getlist(self.DEFERRED_FIELDS_PARAM)
@@ -74,7 +75,9 @@ class RestrictedFieldsSerializerMixin(object):
             #
             # For related fields with `use_pk_only_optimization` we need to
             # resolve the pk value.
-            check_for_none = attribute.pk if isinstance(attribute, PKOnlyObject) else attribute
+            check_for_none = (
+                attribute.pk if isinstance(attribute, PKOnlyObject) else attribute
+            )
             if check_for_none is None:
                 ret[field.field_name] = None
             else:
