@@ -72,16 +72,18 @@ docs: install-docs  ## generate Sphinx HTML documentation, including API docs
 servedocs: docs  ## compile the docs watching for changes
 	@watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D restricted_fields docs
 
-release: dist guard-PART  ## package and upload a release
+release: dist  ## package and upload a release
 	@twine upload dist/*
-	@bump2version $(PART)
-	@git push
-	@git push --tags
 
 dist: clean install-deploy  ## builds source and wheel package
 	@python setup.py sdist
 	@python setup.py bdist_wheel
 	@ls -l dist
+
+increase-version: guard-PART  ## Increase project version
+	@bump2version $(PART)
+	@git push
+	@git push --tags
 
 install: clean requirements.txt  ## install the package to the active Python's site-packages
 	@pip install -r requirements.txt
