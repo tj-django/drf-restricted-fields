@@ -5,16 +5,27 @@ from rest_framework.relations import PKOnlyObject
 
 
 class RestrictedFieldsSerializerMixin(object):
-    """
-    API Serializer mixin which provides support for restricting serialized data to only a subset of fields.
-    This requires using the ``only`` and ``defer`` query parameters.
-    ---
-    only: Restricted to only a subset of fields (Include these fields).
-    defer: Defer the listed fields (Exclude these fields).
-    ---
-    Examples:
+    """API Serializer mixin
+
+    This provides support for restricting serialized data to only a subset of fields using the
+    ``only`` and ``defer`` query parameters.
+
+    :param only: Restricted to only a subset of fields (Include these fields).
+    :type only: list
+    :param defer: Defer the listed fields (Exclude these fields).
+    :type defer: list
+
+
+    **Example:**
+
+    Serialize only the `id` and `name` fields.
+
+    .. code-block:: console
+
         GET https://.../api/users/?only=id&only=name
-        # This returns the serialized data with only the `id` and `name` fields.
+
+    .. code-block:: console
+
         {
             "count":1,
             "next": "http://127.0.0.1:8000/api/users/?only=id&only=name&page=1",
@@ -34,7 +45,12 @@ class RestrictedFieldsSerializerMixin(object):
     def to_representation(self, instance):
         """
         Convert Model Object instance -> Dict of primitive datatypes.
+
+        :param instance: The django model instance.
+        :type instance: django.db.models.Model
+        :return: Dictionary of fields and corresponding value.
         """
+
         request = self.context['request']
         ret = OrderedDict()
         restricted_fields = request.query_params.getlist(self.RESTRICTED_FIELDS_PARAM)

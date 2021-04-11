@@ -1,5 +1,5 @@
 Welcome to drf-restricted-fields's documentation!
-======================================
+=================================================
 
 .. toctree::
    :maxdepth: 2

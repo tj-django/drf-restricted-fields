@@ -24,22 +24,22 @@ Features
 Restrict fields returned by DRF serializers using the ``only`` query parameter
 ------------------------------------------------------------------------------
 
-.. code-block:: sh
+.. code-block:: console
 
     GET http://127.0.0.1:8000/api/users/?only=id&only=name
 
 
 Serialize only the `id` and `name` fields.
 
-.. code-block:: json
+.. code-block:: console
 
     {
-        "count":198,
+        "count": 198,
         "next": "http://127.0.0.1:8000/api/users/?only=id&only=name&page=1",
-        "previous":null,
+        "previous": null,
         "results":[
             {
-                "id":1,
+                "id": 1,
                 "name": "Test"
             },
             ...
@@ -50,22 +50,22 @@ Serialize only the `id` and `name` fields.
 Defer fields returned by DRF serializers using the ``defer`` query parameter
 ----------------------------------------------------------------------------
 
-.. code-block:: sh
+.. code-block:: console
 
     GET http://127.0.0.1:8000/api/users/?defer=name&defer=age
 
 
 Serialize only the `id` and `name` fields.
 
-.. code-block:: json
+.. code-block:: console
 
     {
-        "count":198,
+        "count": 198,
         "next": "http://127.0.0.1:8000/api/users/?defer=name&defer=age&page=1",
-        "previous":null,
+        "previous": null,
         "results":[
             {
-                "id":1,
+                "id": 1,
             },
             ...
         ],
@@ -75,11 +75,3 @@ Serialize only the `id` and `name` fields.
 * Free software: MIT license
 * Documentation: https://drf-restricted-fields.readthedocs.io.
 
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
