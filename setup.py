@@ -81,7 +81,7 @@ setup(
     license="MIT license",
     long_description=readme + '\n\n' + history,
     long_description_content_type="text/x-rst",
-    include_package_data=True,
+    include_package_data=False,
     keywords=['drf_restricted_fields', 'restricted_fields'],
     name='drf_restricted_fields',
     packages=find_packages(include=['restricted_fields', 'restricted_fields.*']),
