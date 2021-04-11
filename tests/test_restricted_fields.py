@@ -5,9 +5,6 @@
 import pytest
 
 
-from restricted_fields import *
-
-
 # @pytest.fixture
 # def response():
 #     """Sample pytest fixture.
