@@ -2,7 +2,7 @@
 
 """Tests for `drf_restricted_fields` package."""
 
-import pytest
+# import pytest
 
 
 # @pytest.fixture
