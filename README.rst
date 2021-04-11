@@ -74,4 +74,3 @@ Serialize only the `id` and `name` fields.
 
 * Free software: MIT license
 * Documentation: https://drf-restricted-fields.readthedocs.io.
-
