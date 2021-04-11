@@ -17,6 +17,56 @@ drf-restricted-fields
      :target: https://pyup.io/repos/github/tj-django/drf-restricted-fields/
      :alt: Updates
 
+Installation
+============
+
+.. code-block:: console
+
+    pip install drf-restricted-fields
+
+
+Usage
+=====
+
+``serializer.py``
+
+.. code-block:: python
+    
+    from rest_framework import serializers
+    from restricted_fields import RestrictedFieldsSerializerMixin
+    
+    User = get_user_model()
+    
+    
+    class UserSerializer(RestrictedFieldsSerializerMixin, serializers.ModelSerializer)
+        
+        class Meta:
+            model = User
+            fields = (
+                'id',
+                'name',
+                'email',
+                'is_staff',
+            )
+            
+``api/views.py`` 
+
+.. code-block:: python
+
+    from rest_framework import viewsets
+    
+    from my_app.api.serializer import UserSerializer
+    
+    User = get_user_model()
+
+    
+    class UserViewSet(viewsets.ReadOnlyModelViewSet):
+        """
+        API endpoint to retrieve all users
+        """
+        queryset = User.objects.all()
+        serializer_class = UserSerializer
+
 
 Features
 ========
@@ -29,18 +79,18 @@ Restrict fields returned by DRF serializers using the ``only`` query parameter
     GET http://127.0.0.1:8000/api/users/?only=id&only=name
 
 
-Serialize only the `id` and `name` fields.
+Serialize only the ``id`` and ``name`` fields.
 
 .. code-block:: console
 
     {
         "count": 198,
-        "next": "http://127.0.0.1:8000/api/users/?only=id&only=name&page=1",
+        "next": "http://127.0.0.1:8000/api/users/?only=id&only=name&page=2",
         "previous": null,
         "results":[
             {
                 "id": 1,
-                "name": "Test"
+                "name": "Test user"
             },
             ...
         ],
@@ -52,20 +102,21 @@ Defer fields returned by DRF serializers using the ``defer`` query parameter
 
 .. code-block:: console
 
-    GET http://127.0.0.1:8000/api/users/?defer=name&defer=age
+    GET http://127.0.0.1:8000/api/users/?defer=name&defer=is_staff
 
 
-Serialize only the `id` and `name` fields.
+Serialize all except the ``name`` and ``is_staff`` fields.
 
 .. code-block:: console
 
     {
         "count": 198,
-        "next": "http://127.0.0.1:8000/api/users/?defer=name&defer=age&page=1",
+        "next": "http://127.0.0.1:8000/api/users/?defer=name&defer=age&page=2",
         "previous": null,
         "results":[
             {
                 "id": 1,
+                "email": "test@test.com"
             },
             ...
         ],
