@@ -79,7 +79,7 @@ setup(
     description="Restrict fields returned by DRF serializers",
     install_requires=install_requires,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     long_description_content_type="text/x-rst",
     include_package_data=False,
     keywords=['drf_restricted_fields', 'restricted_fields'],
