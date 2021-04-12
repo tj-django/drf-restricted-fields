@@ -66,7 +66,9 @@ class RestrictedFieldsSerializerMixin(object):
 
         request = self.context["request"]
         ret = OrderedDict()  # type: typing.Dict[str, typing.Any]
-        restricted_fields = get_fields(request.query_params, self.RESTRICTED_FIELDS_PARAM)
+        restricted_fields = get_fields(
+            request.query_params, self.RESTRICTED_FIELDS_PARAM
+        )
         deferred_fields = get_fields(request.query_params, self.DEFERRED_FIELDS_PARAM)
         fields = self._readable_fields
 
