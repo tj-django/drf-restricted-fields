@@ -43,6 +43,7 @@ lint_requires = [
     "yamllint",
     "isort",
     "black",
+    "mypy",
 ]
 
 extras_require = {
