@@ -19,14 +19,14 @@ def get_fields(query_params, key):
     last_value = query_params.get(key)
     all_values = query_params.getlist(key)
 
-    if ',' in last_value:
-        values |= (last_value.split(','))
+    if "," in last_value:
+        values |= last_value.split(",")
     else:
         values.add(last_value)
 
     for value in all_values:
-        if ',' in value:
-            values |= (value.split(','))
+        if "," in value:
+            values |= value.split(",")
         else:
             values.add(value)
 
