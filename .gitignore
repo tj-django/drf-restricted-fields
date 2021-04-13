@@ -108,3 +108,5 @@ ENV/
 .idea/
 
 .eggs
+
+*.db

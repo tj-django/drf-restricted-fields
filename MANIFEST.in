@@ -12,5 +12,6 @@ exclude Makefile
 exclude tox.ini
 exclude *.txt
 exclude *.yml
+exclude mypy.ini
 exclude .editorconfig
 prune docs

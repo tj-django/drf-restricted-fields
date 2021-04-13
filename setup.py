@@ -36,6 +36,7 @@ test_requires = [
     "tox",
     "tox-gh-actions",
     "coverage",
+    "codacy-coverage",
 ]
 
 lint_requires = [
@@ -43,6 +44,7 @@ lint_requires = [
     "yamllint",
     "isort",
     "black",
+    "mypy",
 ]
 
 extras_require = {
