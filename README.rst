@@ -17,6 +17,14 @@ drf-restricted-fields
      :target: https://pyup.io/repos/github/tj-django/drf-restricted-fields/
      :alt: Updates
 
+.. image:: https://img.shields.io/lgtm/alerts/g/tj-django/drf-restricted-fields.svg?logo=lgtm&logoWidth=18
+     :target: https://lgtm.com/projects/g/tj-django/drf-restricted-fields/alerts/
+     :alt: Total alerts
+
+.. image:: https://img.shields.io/lgtm/grade/python/g/tj-django/drf-restricted-fields.svg?logo=lgtm&logoWidth=18
+     :target: https://lgtm.com/projects/g/tj-django/drf-restricted-fields/context:python
+     :alt: Language grade: Python
+
 Installation
 ============
 
