@@ -3,3 +3,7 @@
 - bandit
 - flake8
 - isort
+- black
+- pycodestyle
+- pydocstyle
+- pyflakes
