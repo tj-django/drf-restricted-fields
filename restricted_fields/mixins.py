@@ -1,7 +1,11 @@
+import typing
 from collections import OrderedDict
 
+from django.utils.functional import cached_property
 from rest_framework.fields import SkipField
 from rest_framework.relations import PKOnlyObject
+
+from restricted_fields.utils import get_fields
 
 
 class RestrictedFieldsSerializerMixin(object):
@@ -43,6 +47,14 @@ class RestrictedFieldsSerializerMixin(object):
     RESTRICTED_FIELDS_PARAM = "only"
     DEFERRED_FIELDS_PARAM = "defer"
 
+    @property
+    def context(self):
+        raise NotImplementedError
+
+    @cached_property
+    def _readable_fields(self):
+        raise NotImplementedError
+
     def to_representation(self, instance):
         """
         Convert Model Object instance -> Dict of primitive datatypes.
@@ -53,9 +65,11 @@ class RestrictedFieldsSerializerMixin(object):
         """
 
         request = self.context["request"]
-        ret = OrderedDict()
-        restricted_fields = request.query_params.getlist(self.RESTRICTED_FIELDS_PARAM)
-        deferred_fields = request.query_params.getlist(self.DEFERRED_FIELDS_PARAM)
+        ret = OrderedDict()  # type: typing.Dict[str, typing.Any]
+        restricted_fields = get_fields(
+            request.query_params, self.RESTRICTED_FIELDS_PARAM
+        )
+        deferred_fields = get_fields(request.query_params, self.DEFERRED_FIELDS_PARAM)
         fields = self._readable_fields
 
         if restricted_fields:
