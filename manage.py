@@ -3,10 +3,8 @@ import os
 import sys
 
 if __name__ == "__main__":
-    os.environ.setdefault(
-        "DJANGO_SETTINGS_MODULE", "django_model_subscription.settings"
-    )
     try:
+        from django.conf import settings
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
@@ -14,4 +12,18 @@ if __name__ == "__main__":
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    settings.configure(
+        DEBUG=True,
+        INSTALLED_APPS=[
+            "django.contrib.auth",
+            "django.contrib.contenttypes",
+            "demo",
+        ],
+        DATABASES={
+            "default": {
+                "ENGINE": "django.db.backends.sqlite3",
+                "NAME": "test.db",
+            }
+        },
+    )
     execute_from_command_line(sys.argv)
