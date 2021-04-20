@@ -1,0 +1,6 @@
+
+[run]
+source = restricted_fields
+omit =
+    tests,
+    demo
