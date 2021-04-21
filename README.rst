@@ -25,6 +25,7 @@ drf-restricted-fields
      :target: https://lgtm.com/projects/g/tj-django/drf-restricted-fields/context:python
      :alt: Language grade: Python
 
+
 Installation
 ============
 
@@ -39,15 +40,15 @@ Usage
 ``serializer.py``
 
 .. code-block:: python
-    
+
     from rest_framework import serializers
     from restricted_fields import RestrictedFieldsSerializerMixin
-    
+
     User = get_user_model()
-    
-    
+
+
     class UserSerializer(RestrictedFieldsSerializerMixin, serializers.ModelSerializer)
-        
+
         class Meta:
             model = User
             fields = (
@@ -56,18 +57,18 @@ Usage
                 'email',
                 'is_staff',
             )
-            
-``api/views.py`` 
+
+``api/views.py``
 
 .. code-block:: python
 
     from rest_framework import viewsets
-    
+
     from my_app.api.serializer import UserSerializer
-    
+
     User = get_user_model()
 
-    
+
     class UserViewSet(viewsets.ReadOnlyModelViewSet):
         """
         API endpoint to retrieve all users
