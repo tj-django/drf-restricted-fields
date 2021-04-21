@@ -6,7 +6,7 @@ from django.http import QueryDict
 def get_fields(query_params, key):
     # type: (QueryDict, str) -> typing.Set[str]
     """
-    Return a flat list of fields the request
+    Return a flat list of fields from the request query params
 
     :param query_params: The request MultiDict instance.
     :type query_params: `django.http.QueryDict`
