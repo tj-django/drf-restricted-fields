@@ -25,6 +25,10 @@ drf-restricted-fields
      :target: https://lgtm.com/projects/g/tj-django/drf-restricted-fields/context:python
      :alt: Language grade: Python
 
+.. image:: https://results.pre-commit.ci/badge/github/tj-django/drf-restricted-fields/main.svg
+   :target: https://results.pre-commit.ci/latest/github/tj-django/drf-restricted-fields/main
+   :alt: pre-commit.ci status
+
 
 Installation
 ============
