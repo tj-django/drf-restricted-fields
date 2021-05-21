@@ -80,6 +80,11 @@ dist: clean install-deploy  ## builds source and wheel package
 	@python setup.py bdist_wheel
 	@ls -l dist
 
+upload-to-pypi:  ## Builds source and wheel package deploy to PyPi
+	@pip install -U twine
+	@python setup.py sdist bdist_wheel
+	@twine upload dist/*
+
 increase-version: guard-PART  ## Increase project version
 	@bump2version $(PART)
 	@git push
