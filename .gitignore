@@ -110,3 +110,5 @@ ENV/
 .eggs
 
 *.db
+
+*.sqlite3
