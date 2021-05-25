@@ -29,8 +29,6 @@ install_requires = [
     "djangorestframework",
 ]
 
-setup_requires = ["pytest-runner"]
-
 test_requires = [
     "pytest>=3",
     "tox",
@@ -54,10 +52,8 @@ extras_require = {
         test_requires,
         lint_requires,
     ],
-    'development:python_version >= "3.6"': ["black"],
     "test": test_requires,
     "lint": lint_requires,
-    'lint:python_version >= "3.6"': ["black"],
     "deploy": deploy_requires,
     "docs": docs_requires,
 }
@@ -85,7 +81,6 @@ setup(
     keywords=["drf_restricted_fields", "restricted_fields"],
     name="drf_restricted_fields",
     packages=find_packages(include=["restricted_fields", "restricted_fields.*"]),
-    setup_requires=setup_requires,
     test_suite="tests",
     tests_require=test_requires,
     extras_require=extras_require,
