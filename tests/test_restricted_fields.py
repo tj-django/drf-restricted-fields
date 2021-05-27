@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 """Tests for `drf_restricted_fields` package."""
 
 # import pytest
