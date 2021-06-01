@@ -37,7 +37,6 @@ Installation
 
     pip install drf-restricted-fields
 
-
 Usage
 =====
 
