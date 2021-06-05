@@ -137,3 +137,9 @@ Serialize all except the ``name`` and ``is_staff`` fields.
 
 * Free software: MIT license
 * Documentation: https://drf-restricted-fields.readthedocs.io.
+
+If you feel generous and want to show some extra appreciation
+
+.. image:: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
+        :target: https://www.buymeacoffee.com/jackton1
+        :alt: Buy me a coffee
