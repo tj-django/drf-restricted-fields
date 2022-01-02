@@ -1,3 +1,7 @@
+This package is no longer actively maintianed 
+
+See: https://github.com/dbrgn/drf-dynamic-fields or https://github.com/dbrgn/drf-dynamic-fields 
+
 =====================
 drf-restricted-fields
 =====================
